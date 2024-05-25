@@ -1,0 +1,31 @@
+---
+interface Props {
+  target: string;
+}
+
+const { target } = Astro.props;
+---
+
+<a href={target}>
+  <svg
+    width="40px"
+    height="40px"
+    class="mx-auto mt-10 mb-10 hover:animate-bounce cursor-pointer"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    stroke="#ffffff"
+    ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+      id="SVGRepo_tracerCarrier"
+      stroke-linecap="round"
+      stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+      <circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2"></circle>
+      <path
+        d="M8 10.5L12 14.5L16 10.5"
+        stroke="#ffffff"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </g></svg
+  >
+</a>

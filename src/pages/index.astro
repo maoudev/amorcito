@@ -1,0 +1,143 @@
+---
+import ArrowDown from "../components/ArrowDown.astro";
+import MasonryLayout from "../components/react/MasonryLayout";
+import Layout from "../layouts/Layout.astro";
+
+const imagenes1: string[] = [
+  "verde.JPEG",
+  "/playa.JPEG",
+  "ojo.JPEG",
+  "rojo.JPEG",
+  "ojos2.JPEG",
+];
+
+const imagenes2: string[] = [
+  "fotojuntos1.JPEG",
+  "fotojuntos2.JPEG",
+  "fotojuntos3.JPEG",
+  "fotopaisaje.JPEG",
+  "fotopaisaje2.JPEG",
+  "playa.JPEG",
+];
+
+const hijos: string[] = ["rucio.JPEG", "papato.JPEG"];
+---
+
+<Layout
+  title="Para Mi Princesa."
+  description="Sitio Web Dedicado A La Mujer De Mi Vida"
+>
+  <main class="w-full">
+    <section class="w-full h-[90vh] px-8 py-36 flex flex-col">
+      <h1
+        class="text-5xl text-center text-white font-bold animate-slideInRight"
+      >
+        ¿Qué es Nayaret para mí?
+      </h1>
+
+      <p
+        class="text-justify
+        text-gray-400
+        mt-5 animate-slideInLeft"
+      >
+        Para mí es luz, es paz, el olor del bosque, el ruido de la lluvia, mis
+        ganas de seguir y salir adelante, mi motivación, es protección, es
+        seguridad, es lo que mueve mi alma, es mi motor, mi futura esposa, mi
+        alma gemela, el amor de mi vida, la mujer de mis sueños, las hojas del
+        otoño. Nayaret es todo eso y mucho más.
+      </p>
+
+      <ArrowDown target="#section2" />
+    </section>
+
+    <section id="section2" class="w-full mt-10 h-[90vh] py-32 px-8">
+      <MasonryLayout client:only="react" items={imagenes1} />
+      <ArrowDown target="#section3" />
+    </section>
+
+    <section id="section3" class="w-full mt-10 h-[100vh] py-5 px-8">
+      <h2
+        class="text-4xl text-center text-white font-bold animate-slideInRight"
+      >
+        ¿Cómo nos conocimos?
+      </h2>
+
+      <p
+        class="text-justify
+        text-gray-400
+        mt-5 animate-slideInLeft"
+      >
+        Era un 17 de febrero de 2021 en el cerro San Juan de Machalí, era un día
+        de carrera de DH cuando de repente de una camioneta bajó una mujer que
+        tenía algo único que me llamó la atención, no podía dejar de mirarla,
+        luego hablamos por Instagram sin ninguna otra intención hasta que un 21
+        de febrero nos juntamos por primera vez. Todo era raro para mí, nunca
+        había sentido una conexión tan grande con alguien, nunca había dejado de
+        pensar en que decir, era la primera vez que salía con alguien y no
+        dejaba de tiritar de los nervios, pero sin duda fue algo hermoso, llegué
+        a la casa super feliz, nunca me había pasado algo así y me sentía muy
+        afortunado. Luego de pasar los días hablando y juntándonos, llegó un
+        sábado 11 de marzo, estaba muy seguro de querer estar con ella y solo
+        buscaba el momento de pedirle que fuera mi polola, pero ella se me
+        adelantó y me pidió ser su pololo, desde ese día he comenzado a vivir mi
+        vida y estoy mas vivo que nunca.
+      </p>
+
+      <ArrowDown target="#section4" />
+    </section>
+
+    <section id="section4" class="w-full mt-10 h-[100vh] py-4 px-8">
+      <MasonryLayout client:only="react" items={imagenes2} />
+      <ArrowDown target="#section5" />
+    </section>
+
+    <section id="section5" class="w-full h-[100vh] py-32 px-8 mt-20">
+      <h2
+        class="text-4xl text-center text-white font-bold animate-slideInRight"
+      >
+        Nuestros Hijos
+      </h2>
+      <p
+        class="text-justify
+      text-gray-400
+      mt-5 animate-slideInLeft mb-10"
+      >
+        Aun sigo ganándome ser el padre de esos dos hermosos niños, cada uno con
+        su personalidad única. Papatos es un niño mamón que quiere mucho cariño,
+        el es tan puro, es un angelito que no está consciente de su gran tamaño.
+        Rucio es un bebé serio, no suele mostrarse tan cariñoso con el resto,
+        pero cuando está solo con su mamá, el es el niño más hermoso, es tan
+        igual a su mami.
+      </p>
+
+      <MasonryLayout client:only="react" items={hijos} />
+    </section>
+  </main>
+
+  <p id="viewInMobile" class="text-white text-4xl text-center hidden">
+    Ver en celular
+  </p>
+</Layout>
+
+<style>
+  @font-face {
+    font-family: "Elegante Classica";
+    src: url("./fonts/EleganteClassica.woff2") format("woff2");
+  }
+
+  h1,
+  #title_shadow,
+  h2 {
+    font-family: "Elegante Classica", sans-serif;
+  }
+
+  @media screen and (min-width: 640px) {
+    main {
+      display: none;
+    }
+
+    #viewInMobile {
+      display: block;
+    }
+  }
+</style>
